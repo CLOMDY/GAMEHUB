@@ -1,0 +1,159 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/logo.png">
+
+    <style>
+        .video {
+            position: fixed;
+            z-index: -1;
+            height: 1012px;
+            /* width: 1557px; */
+            top: -168px;
+            left: -243px;
+        }
+
+        .cell {
+            margin: 10px;
+            border: 2px solid #ce1a00;
+            padding: 10px;
+            text-align: center;
+            font-family: Bungee Spice;
+            border-radius: 20px;
+            background-color: #ffce39;
+            font-size: 40px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-family: Bungee Spice;
+            padding: 10px;
+        }
+
+        .content {
+            font-size: 20px;
+            font-family: Bungee Spice;
+            padding: 10px;
+        }
+
+        .last {
+            font-size: 10px;
+            font-family: Bungee Spice;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop controls class="video" controlsList="nodownload">
+        <source src="/video/gameVideo.mp4" type="video/mp4">
+    </video>
+
+    <div class="container">
+        {{>header}}
+        <div class="cell">
+
+            <div class="title">
+                Welcome to GameVerse!
+            </div>
+            <div class="content">
+                At GameVerse, we're passionate about gaming. We believe that gaming isn't just a hobby; it's a
+                lifestyle.
+                Our
+                mission is to provide gamers of all kinds with an unparalleled experience when it comes to discovering,
+                purchasing, and enjoying their favorite games.
+            </div>
+            <hr>
+            <div class="title">
+                Our Story
+
+            </div>
+
+            <div class="content">
+                Founded in [year], GameVerse began as a small team of avid gamers with a big dream: to create a platform
+                where
+                gamers could easily access the latest titles, classic favorites, and everything in between. Over the
+                years,
+                we've grown into a thriving community of millions of gamers worldwide, united by our love for all things
+                gaming.
+
+            </div>
+            <hr>
+
+            <div class="title">
+                What We Offer
+
+            </div>
+
+            <div class="content">
+                At GameVerse, we offer an extensive selection of games across all genres and platforms, including PC,
+                console,
+                and mobile. Whether you're into action, adventure, strategy, simulation, or indie games, we've got
+                something
+                for
+                everyone. Our catalog features both digital downloads and physical copies, ensuring that you can choose
+                the
+                format that best suits your preferences.
+
+            </div>
+            <hr>
+
+            <div class="title">
+                Why Choose GameVerse?
+
+            </div>
+
+            <div class="content">
+
+                We understand that gamers have many options when it comes to purchasing games online. So why should you
+                choose
+                GameVerse? Here are a few reasons:
+
+            </div>
+            <hr>
+
+            <div class="last">
+
+                Diverse Selection: With thousands of titles available, you'll never run out of games to explore.
+                Competitive Prices: We strive to offer competitive prices to ensure that you get the best value for your
+                money.
+                User-Friendly Interface: Our website is designed to be intuitive and easy to navigate, making it simple
+                to
+                find
+                the games you're looking for.
+                Secure Transactions: We take security seriously, employing the latest encryption technology to safeguard
+                your
+                personal and payment information.
+                Exceptional Customer Service: Our dedicated support team is here to assist you with any questions or
+                concerns
+                you may have, ensuring that your shopping experience is smooth and enjoyable.
+                Join the GameVerse Community
+
+                We believe that gaming is more fun when shared with others. That's why we invite you to join the
+                GameVerse
+                community! Follow us on social media, join our forums, and participate in our events to connect with
+                fellow
+                gamers, share your experiences, and stay up-to-date on the latest gaming news and releases.
+
+                Thank you for choosing GameVerse as your go-to destination for all things gaming. Let's embark on this
+                epic
+                journey together!
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/logo.png">
+
+    <style>
+        .video {
+            position: fixed;
+            z-index: -1;
+            height: 1012px;
+            /* width: 1557px; */
+            top: -168px;
+            left: -243px;
+        }
+
+        .cell {
+            margin: 10px;
+            border: 2px solid #ce1a00;
+            padding: 10px;
+            font-family: Bungee Spice;
+            border-radius: 20px;
+            background-color: #ffce39;
+            font-size: 40px;
+            text-align: left;
+        }
+
+        .title {
+            font-size: 30px;
+            font-family: Bungee Spice;
+            padding: 10px;
+        }
+
+        .content {
+            font-size: 20px;
+            font-family: Bungee Spice;
+            padding: 10px;
+        }
+
+        .last {
+            font-size: 10px;
+            font-family: Bungee Spice;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop controls class="video" controlsList="nodownload">
+        <source src="/video/gameVideo.mp4" type="video/mp4">
+    </video>
+
+    <div class="container" style="text-align: center;">
+        {{>header}}
+        <div class="cell">
+
+            <div class="title">
+                Contact Us
+            </div>
+            <div class="content">
+                Have a question, suggestion, or need assistance? We're here to help! You can reach out to us through the
+                following channels:
+                <br><br>
+                Email: support@gameverse.com
+                <br><br>
+
+                Phone: +1 (800) 123-4567
+                <br><br>
+
+                Address:<br>
+                GameVerse Headquarters<br>
+                123 Main Street<br>
+                City, State, ZIP Code<br>
+                Country<br>
+                <hr>
+                Customer Support Hours:<br>
+                Monday - Friday: 9:00 AM to 6:00 PM (GMT)<br>
+                Saturday - Sunday: Closed<br>
+                <hr>
+                Follow Us:<br>
+                Stay connected with GameVerse by following us on social media:<br>
+                <br>
+                Facebook: [Link]<br>
+                Twitter: [Link]<br>
+                Instagram: [Link]<br>
+                YouTube: [Link]<br>
+                <hr>
+
+                Community Forums:<br>
+                Join our community forums to connect with fellow gamers, share tips and tricks, and discuss your
+                favorite games: [Link]
+                <br>
+                <hr>
+
+                Press Inquiries:<br>
+                For press inquiries or media requests, please contact our PR team at press@gameverse.com.
+                <hr>
+            </div>
+            <div class="last">
+                We value your feedback and strive to provide the best possible customer experience. Don't hesitate to
+                reach out to us with any questions or concerns. Your satisfaction is our top priority!
+
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

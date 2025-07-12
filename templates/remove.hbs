@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD GAME</title>
+
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/logo.png">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+
+    <style>
+        .textBox {
+            width: 585px;
+            border-radius: 10px;
+            border: 2px red solid;
+            margin-top: 10px;
+            height: 37px;
+            background-color: #ffcd39;
+        }
+
+        label {
+            font-family: Bungee Spice;
+            font-size: 35px;
+        }
+
+        .video {
+            position: fixed;
+            z-index: -1;
+            height: 1012px;
+            /* width: 1557px; */
+            top: -168px;
+            left: -243px;
+        }
+
+        .drop{
+            width: 600px;
+            font-size: 22px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop class="video" controlsList="nodownload">
+        <source src="/video/gameVideo.mp4" type="video/mp4">
+    </video>
+    <form id="gameForm">
+        <div class="container">
+            <div style="font-family: Bungee Spice; font-size: 80px; text-align: center; border-radius: 20px;
+            background-color: #ffcd39; border: 2px solid #ce1a00; margin: 10px 0px 10px 0px;">
+                ADD GAME
+            </div>
+            <div style="background-color: rgba(255, 0, 0, 0.516); border-radius: 10px;">
+
+                <div class="row">
+                    <div class="col-4" style="text-align: end;">
+                        <label for="gameCode">SELECT GAME:</label>
+                    </div>
+                    <div class="col-8" style="text-align: left;">
+                        <select name="gameCode" id="gameCode" class="drop"
+                            style="border-radius: 10px; text-align:center; background-color:#ffeaab; border: 2px solid #ce1a00;">
+                            {{#each jsonData}}
+                            <option value="{{this.gameCode}}">{{this.title}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12" style="text-align: center; margin-top:20px; margin:10px;">
+                        <input type="submit" value="REMOVE GAME"
+                            style="width: 400px; border-radius: 5px; font-family:Bungee Spice; background-color: #ffcd39; border: 2px red solid;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

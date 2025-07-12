@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+
+    <style>
+        ul {
+            background-color: #ffcd39;
+            overflow: hidden;
+            border-radius: 10px;
+            border: #ce1a00 2px solid;
+            font-family: Bungee Spice;
+            text-align: center;
+
+        }
+
+        li {
+            float: left;
+            border-right: 1px solid #ce1a00;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: #ce1a00;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #ffcd39;
+        }
+
+        .gameList {
+            text-align: center;
+            font-size: 100px;
+            font-family: Bungee Spice;
+            background-color: #ffcd39;
+            border-radius: 20px;
+            border: 2px solid #ce1a00;
+            letter-spacing: 20px;
+            box-shadow: 0px 0px 100px #ce1a00;
+            margin-top: 20px;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="icon" href="/img/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container" style="padding: 10px;">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/gameList">Game List</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+        <div class="gameList">
+            GAMEVERSE<br>
+            {{title}}
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+        width: 25%;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #ffcd39;
+    }
+</style>
