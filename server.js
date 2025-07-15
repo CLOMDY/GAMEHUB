@@ -7,10 +7,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Setup Handlebars view engine
-app.engine("hbs", exphbs.engine({ extname: ".hbs" }));
-app.set("view engine", "hbs");
-
-app.set("views", path.join(__dirname, "templates"));
+app.engine('hbs', exphbs.engine({
+  extname: 'hbs',
+  defaultLayout: 'main',  // 👈 this is your layout file: main.hbs
+  layoutsDir: path.join(__dirname, 'templates/layouts')  // 👈 folder containing main.hbs
+}));
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'templates'));
 
 
 // Serve static files
@@ -116,7 +119,7 @@ app.get("/contact", (req, res) => {
   res.render('contact', {
     title: 'CONTACT US',
     name: 'MyHelp'
-})
+  })
 });
 
 app.get("/gameDetail", (req, res) => {
