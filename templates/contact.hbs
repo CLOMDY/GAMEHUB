@@ -14,107 +14,110 @@
     <link rel="icon" href="/img/logo.png">
 
     <style>
+        body {
+            font-family: 'Bungee Spice', sans-serif;
+        }
+
         .video {
             position: fixed;
             z-index: -1;
-            height: 1012px;
-            /* width: 1557px; */
-            top: -168px;
-            left: -243px;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            top: 0;
+            left: 0;
         }
 
         .cell {
-            margin: 10px;
+            margin: 10px auto;
             border: 2px solid #ce1a00;
-            padding: 10px;
-            font-family: Bungee Spice;
+            padding: 20px;
             border-radius: 20px;
             background-color: #ffce39;
-            font-size: 40px;
-            text-align: left;
+            max-width: 1300px;
+            width: 100%;
         }
 
         .title {
-            font-size: 30px;
-            font-family: Bungee Spice;
-            padding: 10px;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .content {
-            font-size: 20px;
-            font-family: Bungee Spice;
-            padding: 10px;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .last {
-            font-size: 10px;
-            font-family: Bungee Spice;
-            padding: 10px;
+            font-size: 0.9rem;
+            margin-top: 20px;
             text-align: center;
+        }
+
+        @media (max-width: 576px) {
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .content,
+            .last {
+                font-size: 0.95rem;
+                padding: 5px;
+            }
+
+            .cell {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <video autoplay muted loop controls class="video" controlsList="nodownload">
+    <video autoplay muted loop class="video" controlsList="nodownload">
         <source src="/video/gameVideo.mp4" type="video/mp4">
     </video>
 
-    <div class="container" style="text-align: center;">
+    <div class="container text-center">
         {{>header}}
         <div class="cell">
-
             <div class="title">
                 Contact Us
             </div>
-            <div class="content">
+            <div class="content text-start">
                 Have a question, suggestion, or need assistance? We're here to help! You can reach out to us through the
                 following channels:
                 <br><br>
-                Email: support@gameverse.com
-                <br><br>
-
-                Phone: +1 (800) 123-4567
-                <br><br>
-
-                Address:<br>
+                <strong>Email:</strong> support@gameverse.com<br><br>
+                <strong>Phone:</strong> +1 (800) 123-4567<br><br>
+                <strong>Address:</strong><br>
                 GameVerse Headquarters<br>
                 123 Main Street<br>
                 City, State, ZIP Code<br>
-                Country<br>
+                Country<br><br>
                 <hr>
-                Customer Support Hours:<br>
-                Monday - Friday: 9:00 AM to 6:00 PM (GMT)<br>
-                Saturday - Sunday: Closed<br>
+                <strong>Customer Support Hours:</strong><br>
+                Mon - Fri: 9:00 AM to 6:00 PM (GMT)<br>
+                Sat - Sun: Closed<br><br>
                 <hr>
-                Follow Us:<br>
-                Stay connected with GameVerse by following us on social media:<br>
-                <br>
+                <strong>Follow Us:</strong><br>
                 Facebook: [Link]<br>
                 Twitter: [Link]<br>
                 Instagram: [Link]<br>
-                YouTube: [Link]<br>
+                YouTube: [Link]<br><br>
                 <hr>
-
-                Community Forums:<br>
-                Join our community forums to connect with fellow gamers, share tips and tricks, and discuss your
-                favorite games: [Link]
-                <br>
+                <strong>Community Forums:</strong><br>
+                Connect with fellow gamers and share experiences: [Link]<br><br>
                 <hr>
-
-                Press Inquiries:<br>
-                For press inquiries or media requests, please contact our PR team at press@gameverse.com.
+                <strong>Press Inquiries:</strong><br>
+                For media requests, contact: press@gameverse.com
                 <hr>
             </div>
             <div class="last">
-                We value your feedback and strive to provide the best possible customer experience. Don't hesitate to
-                reach out to us with any questions or concerns. Your satisfaction is our top priority!
-
+                We value your feedback and strive to provide the best possible customer experience.<br>
+                Don’t hesitate to reach out. Your satisfaction is our top priority!
             </div>
         </div>
-
-
-
     </div>
 </body>
 

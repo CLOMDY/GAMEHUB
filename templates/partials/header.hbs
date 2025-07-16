@@ -1,106 +1,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOME</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/img/logo.png" />
+
     <style>
-        ul {
+        .navbar-custom {
             background-color: #ffcd39;
-            overflow: hidden;
             border-radius: 10px;
-            border: #ce1a00 2px solid;
-            font-family: Bungee Spice;
-            text-align: center;
-
+            border:
+                #ce1a00 2px solid;
+            font-family: 'Bungee Spice', cursive;
         }
 
-        li {
-            float: left;
-            border-right: 1px solid #ce1a00;
-        }
-
-        li:last-child {
-            border-right: none;
-        }
-
-        li a {
-            display: block;
+        .navbar-custom .nav-link {
             color: #ce1a00;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
         }
 
-        li a:hover:not(.active) {
-            background-color: #ffcd39;
+        .navbar-custom .nav-link:hover {
+            background-color: #ffd85f;
         }
 
         .gameList {
             text-align: center;
-            font-size: 100px;
-            font-family: Bungee Spice;
+            font-size:
+                3rem;
+            font-family: 'Bungee Spice', cursive;
             background-color: #ffcd39;
             border-radius: 20px;
             border: 2px solid #ce1a00;
-            letter-spacing: 20px;
-            box-shadow: 0px 0px 100px #ce1a00;
-            margin-top: 20px;
+            letter-spacing: 10px;
+            box-shadow: 0px 0px 40px #ce1a00;
+            margin-top: 30px;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .gameList {
+                font-size: 2rem;
+                letter-spacing:
+                    5px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gameList {
+                font-size:
+                    1.5rem;
+                padding: 15px;
+                letter-spacing: 3px;
+            }
         }
     </style>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <link rel="icon" href="/img/logo.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <div class="container" style="padding: 10px;">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/gameList">Game List</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/about">About</a></li>
-        </ul>
+    <div class="container py-3">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-md navbar-custom">
+            <div class="container-fluid">
+                <button class="navbar-toggler w-100 position-relative" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    style="background-color: #ffcd39; border: 2px solid #ce1a00; padding: 10px;">
+
+                    <span class="position-absolute start-50 translate-middle-x"
+                        style="font-family: 'Bungee Spice', sans-serif;">Menu</span>
+                    <span class="navbar-toggler-icon float-end"></span>
+                </button>
+
+
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarLinks">
+                    <ul class="navbar-nav w-100 text-center">
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="/gameList">Game List</a>
+                        </li>
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- Title -->
         <div class="gameList">
-            GAMEVERSE<br>
+            GAMEVERSE<br />
             {{title}}
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-...your-integrity..." crossorigin="anonymous"></script>
 </body>
 
 </html>
-
-<style>
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-    }
-
-    li {
-        float: left;
-        width: 25%;
-    }
-
-    li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    li a:hover {
-        background-color: #ffcd39;
-    }
-</style>

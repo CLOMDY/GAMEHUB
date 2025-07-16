@@ -18,196 +18,155 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
 
     <style>
+        body {
+            font-family: 'Bungee Spice', sans-serif;
+        }
+
+        label {
+            font-size: 1.2em;
+        }
+
         .textBox {
-            width: 585px;
+            width: 100%;
             border-radius: 10px;
             border: 2px red solid;
             margin-top: 10px;
             height: 37px;
             background-color: #ffcd39;
-        }
-
-        label {
-            font-family: Bungee Spice;
-            font-size: 35px;
+            padding: 0 10px;
         }
 
         .video {
             position: fixed;
             z-index: -1;
-            height: 1012px;
-            /* width: 1557px; */
-            top: -168px;
-            left: -243px;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
+
+        .form-title {
+            font-size: 3em;
+            text-align: center;
+            border-radius: 20px;
+            background-color: #ffcd39;
+            border: 2px solid #ce1a00;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .form-container {
+            background-color: rgba(4, 168, 4, 0.516);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border-radius: 5px;
+            font-family: Bungee Spice;
+            background-color: #ffcd39;
+            border: 2px red solid;
+            padding: 10px;
+            font-size: 1.2em;
         }
     </style>
 </head>
+<video autoplay muted loop class="video" controlsList="nodownload">
+    <source src="/video/gameVideo.mp4" type="video/mp4">
+</video>
 
-<body>
-    <video autoplay muted loop class="video" controlsList="nodownload">
-        <source src="/video/gameVideo.mp4" type="video/mp4">
-    </video>
-    <form id="gameForm">
-        <div class="container">
-            <div style="font-family: Bungee Spice; font-size: 80px; text-align: center; border-radius: 20px;
-            background-color: #ffcd39; border: 2px solid #ce1a00; margin: 10px 0px 10px 0px;">
-                ADD GAME
-            </div>
-            <div style="background-color: rgba(4, 168, 4, 0.516); border-radius: 10px;">
-
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="gameCode">gameCode:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="gameCode" name="gameCode" class="textBox"><br>
-                    </div>
+<form id="gameForm">
+    <div class="container">
+        <div class="form-title">ADD GAME</div>
+        <div class="form-container">
+            <div class="row g-3">
+                <!-- Repeatable input group -->
+                <div class="col-md-6">
+                    <label for="gameCode">gameCode:</label>
+                    <input type="text" id="gameCode" name="gameCode" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="img">img:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="img" name="img" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="img">img:</label>
+                    <input type="text" id="img" name="img" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="title">title:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="title" name="title" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="title">title:</label>
+                    <input type="text" id="title" name="title" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="genre">genre:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="genre" name="genre" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="genre">genre:</label>
+                    <input type="text" id="genre" name="genre" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="about">about:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="about" name="about" class="textBox"><br>
-                    </div>
+                <div class="col-md-12">
+                    <label for="about">about:</label>
+                    <input type="text" id="about" name="about" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="company">company:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="company" name="company" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="company">company:</label>
+                    <input type="text" id="company" name="company" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="rating">rating:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="number" id="rating" name="rating" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="rating">rating:</label>
+                    <input type="number" id="rating" name="rating" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="tournament">tournament:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="tournament" name="tournament" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="tournament">tournament:</label>
+                    <input type="text" id="tournament" name="tournament" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="price">price:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="number" id="price" name="price" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="price">price:</label>
+                    <input type="number" id="price" name="price" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="bought">bought:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="number" id="bought" name="bought" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="bought">bought:</label>
+                    <input type="number" id="bought" name="bought" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="wallpaper">wallpaper:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="wallpaper" name="wallpaper" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="wallpaper">wallpaper:</label>
+                    <input type="text" id="wallpaper" name="wallpaper" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="video">video:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="video" name="video" class="textBox"><br>
-                    </div>
+                <div class="col-md-12">
+                    <label for="video">video:</label>
+                    <input type="text" id="video" name="video" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="SS1">SS1:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="SS1" name="SS1" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="SS1">SS1:</label>
+                    <input type="text" id="SS1" name="SS1" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="SS2">SS2:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="SS2" name="SS2" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="SS2">SS2:</label>
+                    <input type="text" id="SS2" name="SS2" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="SS3">SS3:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="SS3" name="SS3" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="SS3">SS3:</label>
+                    <input type="text" id="SS3" name="SS3" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="SS4">SS4:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <input type="text" id="SS4" name="SS4" class="textBox"><br>
-                    </div>
+                <div class="col-md-6">
+                    <label for="SS4">SS4:</label>
+                    <input type="text" id="SS4" name="SS4" class="textBox">
                 </div>
 
-                <div class="row">
-                    <div class="col-12" style="text-align: center; margin-top:20px; margin:10px;">
-                        <input type="submit" value="ADD GAME"
-                            style="width: 400px; border-radius: 5px; font-family:Bungee Spice; background-color: #ffcd39; border: 2px red solid;">
-                    </div>
+                <div class="col-12 text-center">
+                    <input type="submit" value="ADD GAME" class="submit-btn">
                 </div>
             </div>
         </div>
-    </form>
-</body>
-
-</html>
+    </div>
+</form>

@@ -18,74 +18,91 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
 
     <style>
-        .textBox {
-            width: 585px;
-            border-radius: 10px;
-            border: 2px red solid;
-            margin-top: 10px;
-            height: 37px;
-            background-color: #ffcd39;
+        body {
+            font-family: 'Bungee Spice', sans-serif;
         }
 
         label {
-            font-family: Bungee Spice;
-            font-size: 35px;
+            font-size: 1.2em;
+        }
+
+        select.drop {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+            padding: 6px 12px;
+            font-size: 1em;
+            background-color: #ffeaab;
+            border: 2px solid #ce1a00;
+            text-align: center;
         }
 
         .video {
             position: fixed;
             z-index: -1;
-            height: 1012px;
-            /* width: 1557px; */
-            top: -168px;
-            left: -243px;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            top: 0;
+            left: 0;
         }
 
-        .drop{
-            width: 600px;
-            font-size: 22px;
-            margin-top: 10px;
+        .form-title {
+            font-size: 3em;
+            text-align: center;
+            border-radius: 20px;
+            background-color: #ffcd39;
+            border: 2px solid #ce1a00;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .form-container {
+            background-color: rgba(255, 0, 0, 0.516);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border-radius: 5px;
+            font-family: Bungee Spice;
+            background-color: #ffcd39;
+            border: 2px red solid;
+            padding: 10px;
+            font-size: 1.2em;
         }
     </style>
 </head>
+<video autoplay muted loop class="video" controlsList="nodownload">
+    <source src="/video/gameVideo.mp4" type="video/mp4">
+</video>
 
-<body>
-    <video autoplay muted loop class="video" controlsList="nodownload">
-        <source src="/video/gameVideo.mp4" type="video/mp4">
-    </video>
-    <form id="gameForm">
-        <div class="container">
-            <div style="font-family: Bungee Spice; font-size: 80px; text-align: center; border-radius: 20px;
-            background-color: #ffcd39; border: 2px solid #ce1a00; margin: 10px 0px 10px 0px;">
-                ADD GAME
-            </div>
-            <div style="background-color: rgba(255, 0, 0, 0.516); border-radius: 10px;">
-
-                <div class="row">
-                    <div class="col-4" style="text-align: end;">
-                        <label for="gameCode">SELECT GAME:</label>
-                    </div>
-                    <div class="col-8" style="text-align: left;">
-                        <select name="gameCode" id="gameCode" class="drop"
-                            style="border-radius: 10px; text-align:center; background-color:#ffeaab; border: 2px solid #ce1a00;">
-                            {{#each jsonData}}
-                            <option value="{{this.gameCode}}">{{this.title}}</option>
-                            {{/each}}
-                        </select>
-                    </div>
+<form id="gameForm">
+    <div class="container">
+        <div class="form-title">REMOVE GAME</div>
+        <div class="form-container">
+            <div class="row mb-4 align-items-center">
+                <div class="col-md-4 text-md-end text-center">
+                    <label for="gameCode">SELECT GAME:</label>
                 </div>
+                <div class="col-md-8 text-center text-md-start">
+                    <select name="gameCode" id="gameCode" class="drop">
+                        {{#each jsonData}}
+                        <option value="{{this.gameCode}}">{{this.title}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
 
-
-                <div class="row">
-                    <div class="col-12" style="text-align: center; margin-top:20px; margin:10px;">
-                        <input type="submit" value="REMOVE GAME"
-                            style="width: 400px; border-radius: 5px; font-family:Bungee Spice; background-color: #ffcd39; border: 2px red solid;">
-
-                    </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <input type="submit" value="REMOVE GAME" class="submit-btn">
                 </div>
             </div>
         </div>
-    </form>
-</body>
+    </div>
+</form>
+
 
 </html>
