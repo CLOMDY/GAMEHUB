@@ -128,8 +128,6 @@ app.get("/gameDetail", (req, res) => {
   const game = jsonData.find(game => game.gameCode === gameCode);
 
   if (game) {
-    game.bought = game.bought + 1;
-    saveGames(jsonData)
     res.render('gameDetail', {
       title: 'Game Detail',
       name: 'MyName',
@@ -143,6 +141,23 @@ app.get("/gameDetail", (req, res) => {
     });
   }
 });
+
+app.get("/buyGame", (req, res) => {
+  const gameCode = req.query.gameCode;
+  const jsonData = loadGames();
+  const game = jsonData.find(game => game.gameCode === gameCode);
+
+  if (game) {
+    game.bought += 1;
+    saveGames(jsonData);
+    res.redirect(`/gameDetail?gameCode=${gameCode}&bought=true`);
+
+  } else {
+    res.status(404).send("Game not found");
+  }
+});
+
+
 
 app.get("/gameList", (req, res) => {
   const jsonData = loadGames();
