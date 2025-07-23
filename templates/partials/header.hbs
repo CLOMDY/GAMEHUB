@@ -59,6 +59,25 @@
                 letter-spacing: 3px;
             }
         }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0px #ff0000;
+                background-color: transparent;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #ff0000;
+                background-color: #ffeaa7;
+            }
+        }
+
+        .glow-highlight {
+            animation: glow 0.8s ease-in-out 3;
+            border-radius: 8px;
+        }
     </style>
 </head>
 
@@ -85,7 +104,8 @@
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link" href="/gameList">Game List</a>
+                            <a class="nav-link" href="/gameList" id="gameListGlow">Game List</a>
+
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link" href="/contact">Contact</a>
@@ -108,6 +128,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-...your-integrity..." crossorigin="anonymous"></script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const gameListLink = document.getElementById("gameListGlow");
+            gameListLink.classList.add("glow-highlight");
+
+            // Optional: remove the class after animation ends
+            setTimeout(() => {
+                gameListLink.classList.remove("glow-highlight");
+            }, 2400); // 0.8s * 3
+        });
+    </script>
+
 </body>
 
 </html>
