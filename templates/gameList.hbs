@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-
     <link rel="icon" href="/img/logo.png">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/app.js"></script>
@@ -17,239 +17,228 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
 
-
     <style>
+        body {
+            overflow-x: hidden;
+        }
+
         .gameList {
             text-align: center;
-            font-size: 100px;
+            font-size: 8vw;
             font-family: Bungee Spice;
             background-color: #ffcd39;
             border-radius: 20px;
             border: 2px solid #ce1a00;
-            letter-spacing: 20px;
-            box-shadow: 0px 0px 100px #ce1a00;
+            letter-spacing: 0.5vw;
+            box-shadow: 0px 0px 30px #ce1a00;
+            margin-bottom: 20px;
         }
 
         .search {
-            font-size: 36px;
+            font-size: 5vw;
             background-color: #ffcd39;
             border-radius: 20px;
             border: 2px solid #ce1a00;
             font-family: Bungee Spice;
             text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
 
+        .search select,
+        .search input {
+            width: 100%;
+            margin-top: 10px;
+            font-size: 1rem;
+            background-color: rgb(226, 226, 226);
         }
 
         .cell {
-            /* border: 2px solid blue; */
             background-color: rgb(198, 198, 198);
             padding: 10px;
-            height: 405px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0px 0px 10px rgb(255, 255, 255);
             transition: 0.5s ease;
-
-            img {
-                transition: 0.5s ease;
-            }
-
-            .red {
-                transition: 0.5s ease;
-            }
-
-            .btn1 {
-                transition: 0.5s ease-in-out;
-                display: none;
-                font-family: Bungee Spice;
-
-            }
+            height: auto;
         }
 
         .cell:hover {
             position: relative;
             top: -10px;
             box-shadow: 0px 0px 50px rgb(255, 255, 255);
-            height: 410px;
+        }
 
-            img {
-                box-shadow: 0px 0px 20px black;
-                zoom: 1.03;
-            }
+        .cell:hover .red {
+            color: #ce1a00;
+            transform: scale(1.3);
+            text-shadow: 0px 0px 10px #ffbf00;
+        }
 
-            .red {
-                color: #ce1a00;
-                zoom: 1.5;
-                position: relative;
-                top: -10px;
-                text-shadow: 0px 0px 10px #ffbf00;
-            }
+        .cell:hover .btn1 {
+            display: inline-block;
+        }
 
-            .btn1 {
-                position: relative;
-                top: -56px; 
-                left: -71px;
-                zoom: 2.5;
-                display: inline;
-                background-color: #ffcd39;
-                border-radius: 5px;
-                border: 1px solid red;
-            }
+        .btn1 {
+            display: none;
+            font-family: Bungee Spice;
+            background-color: #ffcd39;
+            border-radius: 5px;
+            border: 1px solid red;
+            margin-top: 10px;
         }
 
         .name {
-            margin: 5px 5px 0px 5px;
-            font-size: 20px;
-            font-weight: bolder;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 10px 0 0 0;
+            white-space: nowrap;
+            overflow: hidden;
             text-overflow: ellipsis;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            max-height: 33px;
         }
 
         .company {
-            margin: 0px;
-            font-size: 13px;
+            font-size: 0.9rem;
         }
 
         .price {
-            text-align: left;
-            margin-left: 10px;
             color: rgb(72, 72, 72);
             font-weight: bold;
         }
 
         .gameImg {
-            aspect-ratio: 16/20;
-            height: 300px;
+            width: 100%;
+            aspect-ratio: 3 / 4;
             border-radius: 10px;
         }
+
 
         .video {
             position: fixed;
             z-index: -1;
-            height: 1012px;
-            /* width: 1557px; */
-            top: -168px;
-            left: -243px;
+            height: 100vh;
+            width: 100vw;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
+
+        .img-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .gameImg {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .btn1 {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            font-family: Bungee Spice;
+            background-color: #ffcd39;
+            border: 2px solid red;
+            border-radius: 8px;
+            padding: 6px;
+            display: none;
+            /* hidden by default */
+            text-align: center;
+        }
+
+        /* Show the button only on hover */
+        .img-container:hover .btn1 {
+            display: block;
         }
     </style>
 </head>
 
 <body>
-
     <video autoplay muted loop class="video">
         <source src="video/gameVideo.mp4" type="video/mp4">
     </video>
-    {{>header}}
-    <div class="container" style="padding: 10px;">
-        <div class="row" style="margin-top: 10px;">
-            <div class="search col" style="margin: 0px 5px 0px 5px;">
-                <label for="genre">Genre</label>
 
-                <select name="genre" id="genre"
-                    style="border-radius: 10px; text-align:center; background-color:#ffeaab; border: 2px solid #ce1a00; margin: 0.5rem">
-                    <option value="all">All Genres</option>
-                    <option value="Battle Royal">Battle Royal</option>
-                    <option value="Tactical shooter">Tactical shooter</option>
-                    <option value="Open World">Open World</option>
-                    <option value="Hack and Slash">Hack and Slash</option>
-                    <option value="Racing">Racing</option>
-                </select>
+    {{>header}}
+
+    <div class="container">
+        <div class="row g-4"> <!-- g-4 = gx-4 + gy-4 -->
+            <div class="col-md-6">
+                <div class="search">
+                    <label for="genre">Genre</label>
+                    <select name="genre" id="genre" class="form-control">
+                        <option value="all">All Genres</option>
+                        <option value="Battle Royal">Battle Royal</option>
+                        <option value="Tactical shooter">Tactical shooter</option>
+                        <option value="Open World">Open World</option>
+                        <option value="Hack and Slash">Hack and Slash</option>
+                        <option value="Racing">Racing</option>
+                    </select>
+                </div>
             </div>
-            <div class="search col" style="margin: 0px 5px 0px 5px;">
-                <input type="text" id="search" placeholder="Search..."
-                    style="height: 38px; position:relative; top: 8px; border-radius: 10px; border: 2px solid #ce1a00; width: 532px; background-color:#ffeaab; text-align:center;">
-                <ul id="results" style="display: none;"></ul>
+
+            <div class="col-md-6">
+                <div class="search">
+                    <label for="search">Search</label>
+                    <input type="text" id="search" placeholder="Search..." class="form-control">
+                    <ul id="results" style="display: none;"></ul>
+                </div>
             </div>
         </div>
 
-        <div style="margin: 20px 0px 0px 0px;">
-            <div class="row" style="background-color: #ffce396d; border-radius: 10px; border:#ce1a00 solid 2px;">
+
+
+        <div
+            style="margin: 10px auto; border: 2px solid #ce1a00; padding: 20px; border-radius: 20px; background-color: #ffce39; max-width: 1300px; width: 100%;">
+            <div class="row mt-3 g-3">
                 {{#each jsonData}}
-                <div class="col-3" style="padding: 10px;">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="cell" data-genre="{{this.genre}}">
-                        <div>
+                        <div class="img-container">
                             <img src="{{this.img}}" alt="GAME PHOTO" class="gameImg">
+                            <button class="btn1" onclick="location.href='/gameDetail?gameCode={{this.gameCode}}'">
+                                Details
+                            </button>
                         </div>
-                        <div class="name">
-                            {{this.title}}
-                        </div>
-                        <div class="company">
-                            {{this.company}}
-                        </div>
-                        <div class="price">
-                            <div class="row">
-                                <div class="col red">
-                                    $ {{this.price}}
-                                </div>
-                                <div class="col-4">
-                                    <input type="button" value="Details" style=""
-                                        onclick="location.href='/gameDetail?gameCode={{this.gameCode}}'" class="btn1">
-                                </div>
-                            </div>
-                        </div>
+                        <div class="name">{{this.title}}</div>
+                        <div class="company">{{this.company}}</div>
+                        <div class="price">$ {{this.price}}</div>
                     </div>
                 </div>
                 {{/each}}
-
             </div>
         </div>
+
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Get the select element
-            var genreSelect = document.getElementById("genre");
+            const genreSelect = document.getElementById("genre");
+            const gameCells = document.querySelectorAll(".cell");
 
-            // Get all the game cells
-            var gameCells = document.querySelectorAll(".cell");
-
-            // Function to show or hide game cells based on selected genre
             function filterGamesByGenre() {
-                var selectedGenre = genreSelect.value.toLowerCase(); // Get the selected genre
-                gameCells.forEach(function (cell) {
-                    var gameGenre = cell.getAttribute("data-genre").toLowerCase(); // Get the genre of each game
-                    if (selectedGenre === "all" || gameGenre === selectedGenre) {
-                        cell.parentElement.style.display = "block";
-
-                    } else {
-                        cell.parentElement.style.display = "none";
-                    }
+                const selectedGenre = genreSelect.value.toLowerCase();
+                gameCells.forEach(cell => {
+                    const gameGenre = cell.getAttribute("data-genre").toLowerCase();
+                    cell.closest(".col-12").style.display = (selectedGenre === "all" || gameGenre === selectedGenre) ? "block" : "none";
                 });
             }
 
-            // Call the filter function initially and on select change
-            filterGamesByGenre();
             genreSelect.addEventListener("change", filterGamesByGenre);
-        });
+            filterGamesByGenre();
 
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-            // Get the input element for search
-            var searchInput = document.getElementById("search");
-            // Get the list to display search results
-            var searchResults = document.getElementById("results");
-            // Get all the game cells
-            var gameCells = document.querySelectorAll(".cell");
-
-            // Function to filter games by title
-            function filterGamesByTitle() {
-                var searchText = searchInput.value.toLowerCase(); // Get the search text
-                searchResults.innerHTML = ''; // Clear previous search results
-                gameCells.forEach(function (cell) {
-                    var gameTitle = cell.querySelector('.name').textContent.toLowerCase(); // Get the title of each game
-                    if (gameTitle.includes(searchText)) {
-                        cell.parentElement.style.display = "block";
-                    } else {
-                        cell.parentElement.style.display = "none";
-                    }
+            const searchInput = document.getElementById("search");
+            searchInput.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                gameCells.forEach(cell => {
+                    const title = cell.querySelector(".name").textContent.toLowerCase();
+                    cell.closest(".col-12").style.display = title.includes(searchText) ? "block" : "none";
                 });
-            }
-
-            // Call the filter function on search input change
-            searchInput.addEventListener("input", filterGamesByTitle);
+            });
         });
     </script>
 </body>
