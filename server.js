@@ -21,7 +21,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Route
 app.get("/", (req, res) => {
-  res.render("home"); // views/home.handlebars must exist
+  res.render("home", {
+    title: "Welcome to GameHub",
+    name: "MyName"
+  }); // views/home.handlebars must exist
 });
 app.get("/about", (req, res) => {
   res.render('about', {
